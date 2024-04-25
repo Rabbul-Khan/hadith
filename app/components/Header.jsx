@@ -3,7 +3,7 @@ import { PiBooksFill, PiMagnifyingGlassBold } from 'react-icons/pi';
 const Header = () => {
   return (
     <header className="flex items-center justify-between row-span-1 col-span-full">
-      <div className="flex items-center gap-5">
+      <div className="flex items-center gap-5 cursor-pointer">
         <PiBooksFill
           color="#2B9E76"
           size={45}

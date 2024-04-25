@@ -1,8 +1,8 @@
 'use client';
 
-import BookChapter from './components/BookChapter';
-
 import { useEffect, useState } from 'react';
+
+import BookChapter from './components/BookChapter';
 import MainContent from './components/MainContent';
 import RightAside from './components/RightAside';
 
@@ -27,6 +27,7 @@ export default function Home() {
           'Content-Type': 'application/json',
         },
       });
+
       const data = await response.json();
       setBooks(data);
 
@@ -104,7 +105,7 @@ export default function Home() {
   };
 
   return (
-    <div className="grid col-start-2 col-end-13 bg-gray-200 rounded-lg grid-cols-subgrid">
+    <div className="grid col-start-2 col-end-13 bg-[#F2F4F6] rounded-lg grid-cols-subgrid">
       <BookChapter books={books} chapters={chapters} />
       <MainContent
         chapters={chapters}
