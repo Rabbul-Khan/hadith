@@ -25,7 +25,7 @@ const BookChapter = ({ books, chapters }) => {
       </div>
       <div className="flex flex-col gap-5 px-5 ">
         <div className="relative ">
-          <PiMagnifyingGlassBold className="absolute top-4 left-5 text-slate-500 " />
+          <PiMagnifyingGlassBold className="absolute top-5 left-5 text-slate-500 " />
 
           <input
             placeholder="Search For Filter"
@@ -41,7 +41,7 @@ const BookChapter = ({ books, chapters }) => {
                 className="flex items-center gap-3 px-3 py-6 bg-[#EBFCF6] rounded-lg cursor-pointer"
               >
                 <div className="relative">
-                  <div className="absolute font-medium text-white top-3 left-5 ">
+                  <div className="absolute font-medium text-white top-2 left-5 ">
                     {item.abvr_code}
                   </div>
                   <PiHexagonFill size={50} className="text-primary" />

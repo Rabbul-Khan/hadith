@@ -3,7 +3,7 @@ const RightAside = () => {
     <aside className="flex flex-col col-start-9 col-end-13 p-5 outline-dotted outline-yellow-500">
       <div className="flex flex-col gap-3 p-5 bg-white rounded-lg">
         <p className="text-lg text-center ">সেটিংস</p>
-        <label for="font">আরবি ফন্ট সিলেক্ট করুন</label>
+        <label htmlFor="font">আরবি ফন্ট সিলেক্ট করুন</label>
         <select name="font" id="font" className="p-3 rounded-lg">
           <option value="KFGQ">KFGQ</option>
           <option value="Me Quran">Me Quran</option>
@@ -11,7 +11,7 @@ const RightAside = () => {
           <option value="Amiri">Amiri</option>
           <option value="Arial">Arial</option>
         </select>
-        <label for="arFontSize">এরাবিক ফন্ট সাইজ</label>
+        <label htmlFor="arFontSize">এরাবিক ফন্ট সাইজ</label>
         <input
           type="range"
           id="arFontSize"
@@ -19,11 +19,11 @@ const RightAside = () => {
           min="18"
           max="40"
         ></input>
-        <label for="tr  FontSize">অনুবাদ ফন্ট সাইজ</label>
+        <label htmlFor="tr_FontSize">অনুবাদ ফন্ট সাইজ</label>
         <input
           type="range"
-          id="tr  FontSize"
-          name="tr  FontSize"
+          id="tr_FontSize"
+          name="tr_FontSize"
           min="18"
           max="40"
         ></input>

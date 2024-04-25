@@ -17,7 +17,7 @@ const Header = () => {
       <div className="flex gap-3">
         <div className="relative">
           <PiMagnifyingGlassBold
-            className="absolute top-4 left-5"
+            className="absolute top-5 left-5"
             color="#5C5C5C"
           />
           <input

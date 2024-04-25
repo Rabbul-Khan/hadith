@@ -32,8 +32,8 @@ export default function Home() {
       setBooks(data);
 
       if (data.length > 0) {
-        setSelectedBook(data[0].book_name);
-        fetchChapters(data[0].book_name);
+        setSelectedBook(data[0]);
+        fetchChapters(data[0]);
       }
     } catch (error) {
       console.error('Error fetching books:', error);
@@ -43,7 +43,7 @@ export default function Home() {
   const fetchChapters = async (selectedBook) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/books/${selectedBook}/chapters`,
+        `http://localhost:3000/api/books/${selectedBook.book_name}/chapters`,
         {
           method: 'GET',
           headers: {
@@ -79,6 +79,7 @@ export default function Home() {
 
       if (data.length > 0) {
         setSelectedSection(data[0].section_id);
+
         fetchHadiths(selectedBook, selectedChapter);
       }
     } catch (error) {
