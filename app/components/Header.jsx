@@ -1,22 +1,34 @@
-import { PiBooksFill } from 'react-icons/pi';
+import { PiBooksFill, PiMagnifyingGlassBold } from 'react-icons/pi';
 
 const Header = () => {
   return (
-    <header className="flex justify-between row-span-1 col-span-full">
+    <header className="flex items-center justify-between row-span-1 col-span-full">
       <div className="flex items-center gap-5">
         <PiBooksFill
-          color="green"
-          size={40}
-          className="p-2 border-2 border-green-400 rounded-md "
+          color="#2B9E76"
+          size={45}
+          className="p-2 border rounded-lg border-primary"
         />
-        <div>
-          <p className="font-bold ">সূচিপত্র</p>
-          <p className="text-xs ">হাদিস পড়ুন শিখুন এবং জানুন</p>
+        <div className="flex flex-col gap-1">
+          <p className="font-bold">হাদিস সমূহ</p>
+          <p className="text-sm text-text-light ">হাদিস পড়ুন শিখুন এবং জানুন</p>
         </div>
       </div>
-      <div>
-        <input placeholder="Search Hadith" />
-        <button>Night Mode</button>
+      <div className="flex gap-3">
+        <div className="relative">
+          <PiMagnifyingGlassBold
+            className="absolute top-4 left-5"
+            color="#5C5C5C"
+          />
+          <input
+            placeholder="Search Hadith"
+            type="text"
+            className="p-3 pl-12 outline outline-[#DEE1E5] rounded-lg focus:outline-primary"
+          />
+        </div>
+        <button className="px-5 py-3 text-white rounded-lg bg-primary">
+          সাপোর্ট করুন
+        </button>
       </div>
     </header>
   );
