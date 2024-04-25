@@ -1,6 +1,6 @@
 const RightAside = () => {
   return (
-    <aside className="flex flex-col col-start-9 col-end-13 p-5 outline-dotted outline-yellow-500">
+    <aside className="flex flex-col col-start-9 col-end-13 p-5 ">
       <div className="flex flex-col gap-3 p-5 bg-white rounded-lg">
         <p className="text-lg text-center ">সেটিংস</p>
         <label htmlFor="font">আরবি ফন্ট সিলেক্ট করুন</label>
