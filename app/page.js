@@ -1,71 +1,120 @@
 'use client';
+
+import BookChapter from './components/BookChapter';
+
 import { useEffect, useState } from 'react';
+import MainContent from './components/MainContent';
+import RightAside from './components/RightAside';
 
 export default function Home() {
   const [books, setBooks] = useState([]);
+  const [selectedBook, setSelectedBook] = useState('');
+  const [chapters, setChapters] = useState([]);
+  const [selectedChapter, setSelectedChapter] = useState('');
+  const [sections, setSections] = useState([]);
+  const [selectedSection, setSelectedSection] = useState('');
+  const [hadiths, setHadiths] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/books', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => setBooks(data));
+    fetchBooks();
   }, []);
 
+  const fetchBooks = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/api/books', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      const data = await response.json();
+      setBooks(data);
+
+      if (data.length > 0) {
+        setSelectedBook(data[0].book_name);
+        fetchChapters(data[0].book_name);
+      }
+    } catch (error) {
+      console.error('Error fetching books:', error);
+    }
+  };
+
+  const fetchChapters = async (selectedBook) => {
+    try {
+      const response = await fetch(
+        `http://localhost:3000/api/books/${selectedBook}/chapters`,
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      const data = await response.json();
+      setChapters(data);
+
+      if (data.length > 0) {
+        setSelectedChapter(data[0].chapter_id);
+        fetchSections(data[0].book_name, data[0].chapter_id);
+      }
+    } catch (error) {
+      console.error('Error fetching chapters:', error);
+    }
+  };
+
+  const fetchSections = async (selectedBook, selectedChapter) => {
+    try {
+      const response = await fetch(
+        `http://localhost:3000/api/books/${selectedBook}/chapters/${selectedChapter}/sections`,
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      const data = await response.json();
+      setSections(data);
+
+      if (data.length > 0) {
+        setSelectedSection(data[0].section_id);
+        fetchHadiths(selectedBook, selectedChapter);
+      }
+    } catch (error) {
+      console.error('Error fetching chapters:', error);
+    }
+  };
+
+  const fetchHadiths = async (selectedBook, selectedChapter) => {
+    try {
+      const response = await fetch(
+        `http://localhost:3000/api/books/${selectedBook}/chapters/${selectedChapter}/sections/hadiths`,
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      const data = await response.json();
+      setHadiths(data);
+    } catch (error) {
+      console.error('Error fetching chapters:', error);
+    }
+  };
+
   return (
-    <div className="min-w-full  grid grid-cols-12 grid-rows-[5vh_auto] min-h-screen p-2 text-black bg-white ">
-      <header className="flex justify-between row-span-1 outline-dotted col-span-full">
-        <div className="flex">
-          <div>Icon</div>
-          <div>
-            <div>সূচিপত্র</div>
-            <div>হাদিস পড়ুন শিখুন এবং জানুন</div>
-          </div>
-        </div>
-        <div>
-          <input placeholder="Search Hadith" />
-          <button>Night Mode</button>
-        </div>
-      </header>
-
-      <nav className="col-span-1 row-[span_2_/_span_-1] outline-dashed flex outline-red-500 justify-center items-center">
-        <ul>
-          <li>Home</li>
-          <li>Books</li>
-          <li>Chapter</li>
-          <li>Bookmarks</li>
-          <li>Menu</li>
-          <li>Share</li>
-          <button>Donate</button>
-        </ul>
-      </nav>
-
-      <div className="grid col-start-2 col-end-13 bg-gray-200 grid-cols-subgrid">
-        <aside className="flex flex-col col-start-1 col-end-4 p-5 outline-dotted outline-yellow-500">
-          <div className="flex">
-            <p>বই</p>
-            <p>অধ্যায়</p>
-          </div>
-          <input placeholder="Search For Filter" />
-          <div>
-            {books.map((item) => (
-              <div key={item.id}>
-                <p>{item.title}</p>
-                <p>{item.id}</p>
-              </div>
-            ))}
-          </div>
-        </aside>
-        <main className="col-start-4 col-end-9 p-5 outline-lime-500 outline">
-          Main
-        </main>
-        <aside className="flex flex-col col-start-9 col-end-13 p-5 outline-dotted outline-yellow-500">
-          Settings
-        </aside>
-      </div>
+    <div className="grid col-start-2 col-end-13 bg-gray-200 rounded-lg grid-cols-subgrid">
+      <BookChapter books={books} chapters={chapters} />
+      <MainContent
+        chapters={chapters}
+        sections={sections}
+        hadiths={hadiths}
+        selectedBook={selectedBook}
+        selectedChapter={selectedChapter}
+        selectedSection={selectedSection}
+      />
+      <RightAside />
     </div>
   );
 }
