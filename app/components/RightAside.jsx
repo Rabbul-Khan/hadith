@@ -1,35 +1,52 @@
 const RightAside = () => {
   return (
-    <aside className="flex flex-col col-start-9 col-end-13 p-5 ">
-      <div className="flex flex-col gap-3 p-5 bg-white rounded-lg">
+    <aside className="flex-col hidden col-start-9 col-end-13 gap-5 p-5 2xl:flex">
+      <div className="flex flex-col gap-5 p-5 bg-white rounded-lg">
         <p className="text-lg text-center ">সেটিংস</p>
-        <label htmlFor="font">আরবি ফন্ট সিলেক্ট করুন</label>
-        <select name="font" id="font" className="p-3 rounded-lg">
-          <option value="KFGQ">KFGQ</option>
-          <option value="Me Quran">Me Quran</option>
-          <option value="Al Mushaf">Al Mushaf</option>
-          <option value="Amiri">Amiri</option>
-          <option value="Arial">Arial</option>
-        </select>
-        <label htmlFor="arFontSize">এরাবিক ফন্ট সাইজ</label>
-        <input
-          type="range"
-          id="arFontSize"
-          name="emFontSize"
-          min="18"
-          max="40"
-        ></input>
-        <label htmlFor="tr_FontSize">অনুবাদ ফন্ট সাইজ</label>
-        <input
-          type="range"
-          id="tr_FontSize"
-          name="tr_FontSize"
-          min="18"
-          max="40"
-        ></input>
-        <div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="font" className="text-sm font-bold">
+            আরবি ফন্ট সিলেক্ট করুন
+          </label>
+          <select name="font" id="font" className="p-3 rounded-lg">
+            <option value="KFGQ">KFGQ</option>
+            <option value="Me Quran">Me Quran</option>
+            <option value="Al Mushaf">Al Mushaf</option>
+            <option value="Amiri">Amiri</option>
+            <option value="Arial">Arial</option>
+          </select>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label htmlFor="arFontSize" className="text-sm font-bold">
+            এরাবিক ফন্ট সাইজ
+          </label>
+          <input
+            className="accent-primary"
+            type="range"
+            id="arFontSize"
+            name="emFontSize"
+            min="18"
+            max="40"
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label htmlFor="tr_FontSize" className="text-sm font-bold">
+            অনুবাদ ফন্ট সাইজ
+          </label>
+          <input
+            className="accent-primary"
+            type="range"
+            id="tr_FontSize"
+            name="tr_FontSize"
+            min="18"
+            max="40"
+          ></input>
+        </div>
+
+        <div className="flex justify-between">
           <label
-            className="inline-block pl-[0.15rem] hover:cursor-pointer"
+            className="inline-block pl-[0.15rem] hover:cursor-pointer text-sm font-bold"
             htmlFor="flexSwitchCheckDefault"
           >
             নাইট মোড
@@ -41,6 +58,20 @@ const RightAside = () => {
             id="flexSwitchCheckDefault"
           />
         </div>
+      </div>
+      <div className="flex flex-col gap-3 p-5 rounded-lg bg-[#34AB82]">
+        <p className="text-lg font-medium text-white">
+          আপনিও সদাকায়ে জারিয়াতে অংশ নিন
+        </p>
+        <p className="text-sm font-light leading-8 text-white">
+          আপনার দান, সেটা ছোট হলেও, ইসলামের বার্তা ও হাদিস প্রচারে সহায়তা করবে।
+          আমাদের কাজের অংশ হতে এবং এই গুরুত্বপূর্ণ কাজে সাহায্য করতে আমাদের
+          প্রজেক্টে হাদিয়া দিন। ইনশাআল্লাহ এটি সদাকায়ে জারিয়াহ হিসেবে আল্লাহ্‌র
+          কাছে কবুল হবে।
+        </p>
+        <button className="px-5 py-3 bg-white rounded-lg text-primary hover:shadow-lg ">
+          সাপোর্ট করুন
+        </button>
       </div>
     </aside>
   );

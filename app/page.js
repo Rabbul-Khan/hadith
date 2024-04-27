@@ -106,7 +106,7 @@ export default function Home() {
   };
 
   return (
-    <div className="grid col-start-2 col-end-13 bg-[#F2F4F6] rounded-lg grid-cols-subgrid">
+    <div className="grid col-start-1  md:col-start-2 col-end-13 bg-[#F2F4F6] rounded-lg md:grid-cols-subgrid">
       <BookChapter books={books} chapters={chapters} />
       <MainContent
         chapters={chapters}

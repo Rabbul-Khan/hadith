@@ -4,7 +4,6 @@ import {
   PiCopySimple,
   PiBookmarkSimple,
   PiShareNetwork,
-  PiHexagonFill,
   PiSquareFill,
 } from 'react-icons/pi';
 import { BiErrorAlt } from 'react-icons/bi';
@@ -21,14 +20,14 @@ const MainContent = ({
   selectedSection,
 }) => {
   return (
-    <main className="flex flex-col col-start-4 col-end-9 gap-5 p-5 rounded-lg h-[800px]  overflow-y-auto">
+    <main className="flex flex-col  md:col-start-1 xl:col-start-4 col-end-13 2xl:col-end-9 gap-5 p-5 rounded-lg h-[800px]  overflow-y-auto">
       <div className="p-3 bg-white rounded-lg">
-        <div className="flex items-center gap-1 pb-3 border-b border-gray-400 text-slate-500 ">
-          <PiBooksFill size={20} />
+        <div className="flex items-center gap-1 pb-3 border-b border-gray-400 text-slate-500">
+          <PiBooksFill size={20} className="cursor-pointer" />
           <LiaGreaterThanSolid size={12} />
-          <p className="capitalize">{selectedBook.book_name}</p>
+          <p className="capitalize cursor-pointer">{selectedBook.book_name}</p>
           <LiaGreaterThanSolid size={12} />
-          <p>{selectedSection}</p>
+          <p className="cursor-pointer">{selectedSection}</p>
         </div>
         <div className="flex items-center justify-between pt-5 cursor-pointer">
           <div className="flex items-center gap-3">

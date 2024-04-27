@@ -4,7 +4,7 @@ import { PiMagnifyingGlassBold, PiHexagonFill } from 'react-icons/pi';
 const BookChapter = ({ books, chapters }) => {
   const [showBooks, setShowBooks] = useState(true);
   return (
-    <aside className="flex flex-col col-start-1 col-end-4 gap-5 m-5 mr-0 bg-white rounded-lg">
+    <aside className="flex-col hidden col-start-1 col-end-4 gap-5 m-5 mr-0 bg-white rounded-lg xl:flex">
       <div className="flex border-b border-gray-300 cursor-pointer">
         <p
           className={`w-1/2 py-3 text-xl text-center  rounded-tl-lg  ${
@@ -29,7 +29,7 @@ const BookChapter = ({ books, chapters }) => {
 
           <input
             placeholder="Search For Filter"
-            className="w-full p-3 pl-12 bg-[#F2F4F6] rounded-lg focus:outline-0 focus:text-black"
+            className="w-full p-3 pl-12 bg-[#F2F4F6] rounded-lg  focus:outline-primary outline outline-[#DEE1E5]"
           />
         </div>
 

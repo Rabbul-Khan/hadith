@@ -3,8 +3,8 @@ import { GoBook, GoBookmark, GoHome } from 'react-icons/go';
 
 const Nav = () => {
   return (
-    <nav className="col-span-1 row-[span_2_/_span_-1] flex  justify-center items-center">
-      <ul className="flex flex-col gap-10">
+    <nav className="md:col-span-1 md:static fixed bottom-0 md:row-[span_2_/_span_-1] flex justify-center items-center pr-3 xl:pr-0 bg-white w-full p-2 shadow-inner ">
+      <ul className="flex gap-10 md:flex-col">
         <li>
           <GoHome
             size={50}

@@ -10,12 +10,21 @@ const Header = () => {
           className="p-2 border rounded-lg border-primary"
         />
         <div className="flex flex-col gap-1">
-          <p className="font-bold">হাদিস সমূহ</p>
-          <p className="text-sm text-text-light ">হাদিস পড়ুন শিখুন এবং জানুন</p>
+          <p className="text-2xl md:hidden text-primary">আল হাদিস</p>
+          <p className="hidden font-bold md:block">হাদিস সমূহ</p>
+          <p className="hidden text-sm md:block text-text-light">
+            হাদিস পড়ুন শিখুন এবং জানুন
+          </p>
         </div>
       </div>
       <div className="flex gap-3">
-        <div className="relative">
+        <PiMagnifyingGlassBold
+          size={50}
+          className="p-3 border rounded-lg lg:hidden bg-slate-200"
+          color="#5C5C5C"
+        />
+
+        <div className="relative hidden lg:block">
           <PiMagnifyingGlassBold
             className="absolute top-5 left-5"
             color="#5C5C5C"
