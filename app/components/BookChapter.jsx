@@ -48,7 +48,7 @@ const BookChapter = ({ books, chapters }) => {
                 </div>
                 <div className="flex flex-col gap-2">
                   <p>{item.title}</p>
-                  <p className="text-sm text-slate-500 ">
+                  <p className="text-sm text-slate-500   ">
                     সর্বমোট হাদিস -{item.number_of_hadis}
                   </p>
                 </div>
@@ -63,7 +63,7 @@ const BookChapter = ({ books, chapters }) => {
                 className="flex items-center gap-3 px-3 py-6 bg-[#EBFCF6] rounded-lg cursor-pointer"
               >
                 <div className="relative">
-                  <div className="absolute font-medium text-white top-3 left-5 ">
+                  <div className="absolute font-medium text-white top-2 left-5 ">
                     {item.chapter_id}
                   </div>
                   <PiHexagonFill size={50} className="text-primary" />

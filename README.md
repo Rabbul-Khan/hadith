@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hadiths API and UI Clone
+
+This project aims to create a clone of the UI of [ihadis.com](https://ihadis.com/bukhari/1) using Next.js, Tailwind CSS, and Node.js. The project also includes the development of API endpoints to fetch books, chapters, sections, and hadiths data.
+
+## Features
+
+- **UI Clone**: The frontend replicates the design and functionality of [ihadis.com](https://ihadis.com/bukhari/1).
+- **Responsive Design**: The UI is designed to be fully responsive, ensuring optimal viewing across various devices and screen sizes.
+- **Functional Sidebar**: The sidebar includes sections for Books and Chapters, with functional links and collapsible sections.
+- **Section Cards**: Each section is represented by cards with relevant information.
+- **Hadith Cards**: Hadiths are displayed in cards with details such as hadith number, text, and related references.
+- **API Integration**: Backend endpoints are implemented to provide data for the frontend UI.
+
+## Technologies Used
+
+- **Node.js**: Used for developing backend API endpoints.
+- **Tailwind CSS**: Utilized for styling the frontend UI with a focus on responsiveness and utility classes.
+- **Next.js**: Employed for building the frontend application with server-side rendering capabilities.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js installed on your machine
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   git clone https://github.com/Rabbul-Khan/hadith.git
 
-## Learn More
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Navigate to the project directory:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   cd hadith
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```
 
-## Deploy on Vercel
+3. Install dependencies:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npm install
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## API Endpoints
+
+### Books
+
+- **GET /api/books**: Get all books.
+- **GET /api/books/:book_name**: Get a specific book.
+
+### Chapters
+
+- **GET /api/books/:book_name/chapters**: Get all chapters of a specific book.
+- **GET /api/books/:book_name/chapters/:chapter_number**: Get a specific chapter from a specific book.
+
+### Sections
+
+- **GET /api/books/:book_name/chapters/:chapter_number/sections**: Get all sections of a specific chapter from a specific book.
+
+### Hadiths
+
+- **GET /api/books/:book_name/chapters/:chapter_number/sections/hadiths**: Get all hadiths of a specific section.
+
+## Contributors
+
+- [Mohammed Rabbul Hossain Khan](https://github.com/Rabbul-Khan)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- Original UI design inspiration from [ihadis.com](https://ihadis.com/bukhari/1)
+- Next.js documentation: https://nextjs.org/docs
+- Tailwind CSS documentation: https://tailwindcss.com/docs

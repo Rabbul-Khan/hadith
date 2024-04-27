@@ -10,7 +10,9 @@ const Header = () => {
           className="p-2 border rounded-lg border-primary"
         />
         <div className="flex flex-col gap-1">
-          <p className="text-2xl md:hidden text-primary">আল হাদিস</p>
+          <p className="text-2xl hidden sm:block md:hidden text-primary">
+            আল হাদিস
+          </p>
           <p className="hidden font-bold md:block">হাদিস সমূহ</p>
           <p className="hidden text-sm md:block text-text-light">
             হাদিস পড়ুন শিখুন এবং জানুন
@@ -35,7 +37,7 @@ const Header = () => {
             className="p-3 pl-12 outline outline-[#DEE1E5] rounded-lg focus:outline-primary"
           />
         </div>
-        <button className="px-5 py-3 text-white rounded-lg bg-primary">
+        <button className="hidden sm:block px-5 py-3 text-white rounded-lg bg-primary">
           সাপোর্ট করুন
         </button>
       </div>

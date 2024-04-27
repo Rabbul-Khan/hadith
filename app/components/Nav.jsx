@@ -3,44 +3,25 @@ import { GoBook, GoBookmark, GoHome } from 'react-icons/go';
 
 const Nav = () => {
   return (
-    <nav className="md:col-span-1 md:static fixed bottom-0 md:row-[span_2_/_span_-1] flex justify-center items-center pr-3 xl:pr-0 bg-white w-full p-2 shadow-inner ">
-      <ul className="flex gap-10 md:flex-col">
+    <nav className="md:col-span-1 md:static fixed bottom-0 md:row-[span_2_/_span_-1] flex justify-center items-center md:pr-3 xl:pr-0 bg-white w-full p-2 shadow-inner ">
+      <ul className="flex gap-5 sm:gap-10 md:flex-col ">
         <li>
-          <GoHome
-            size={50}
-            //color="gray"
-            className="p-2 rounded-md cursor-pointer text-text-light hover:bg-gray-200 hover:text-primary"
-          />
+          <GoHome className="p-2 rounded-md cursor-pointer text-text-light hover:bg-gray-200 hover:text-primary md:text-5xl text-4xl   " />
         </li>
         <li>
-          <PiBooksFill
-            size={50}
-            className="p-2 text-white rounded-md cursor-pointer bg-primary "
-          />
+          <PiBooksFill className="p-2 md:text-5xl text-white rounded-md cursor-pointer bg-primary text-4xl  " />
         </li>
         <li>
-          <GoBook
-            size={50}
-            className="p-2 rounded-md cursor-pointer text-text-light hover:bg-gray-200 hover:text-primary"
-          />
+          <GoBook className="p-2 md:text-5xl rounded-md cursor-pointer text-text-light hover:bg-gray-200 hover:text-primary text-4xl " />
         </li>
         <li>
-          <GoBookmark
-            size={50}
-            className="p-2 rounded-md cursor-pointer text-text-light hover:bg-gray-200 hover:text-primary"
-          />
+          <GoBookmark className="p-2 md:text-5xl rounded-md cursor-pointer text-text-light hover:bg-gray-200 hover:text-primary text-4xl " />
         </li>
         <li>
-          <PiSquaresFour
-            size={50}
-            className="p-2 rounded-md cursor-pointer text-text-light hover:bg-gray-200 hover:text-primary"
-          />
+          <PiSquaresFour className="p-2 md:text-5xl rounded-md cursor-pointer text-text-light hover:bg-gray-200 hover:text-primary text-4xl " />
         </li>
         <li>
-          <PiPaperPlaneTilt
-            size={50}
-            className="p-2 rounded-md cursor-pointer text-text-light hover:bg-gray-200 hover:text-primary"
-          />
+          <PiPaperPlaneTilt className="p-2 md:text-5xl rounded-md cursor-pointer text-text-light hover:bg-gray-200 hover:text-primary text-4xl " />
         </li>
       </ul>
     </nav>
