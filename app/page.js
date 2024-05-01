@@ -30,7 +30,7 @@ export default function Home() {
 
   const fetchBooks = async () => {
     try {
-      const response = await fetch('/api/books', {
+      const response = await fetch('https://hadith-phi.vercel.app/api/books', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ export default function Home() {
   const fetchChapters = async (selectedBook) => {
     try {
       const response = await fetch(
-        `/api/books/${selectedBook.book_name}/chapters`,
+        `https://hadith-phi.vercel.app/api/books/${selectedBook.book_name}/chapters`,
         {
           method: 'GET',
           headers: {
@@ -75,7 +75,7 @@ export default function Home() {
   const fetchSections = async (selectedBook, selectedChapter) => {
     try {
       const response = await fetch(
-        `/api/books/${selectedBook}/chapters/${selectedChapter}/sections`,
+        `https://hadith-phi.vercel.app/api/books/${selectedBook}/chapters/${selectedChapter}/sections`,
         {
           method: 'GET',
           headers: {
@@ -99,7 +99,7 @@ export default function Home() {
   const fetchHadiths = async (selectedBook, selectedChapter) => {
     try {
       const response = await fetch(
-        `/api/books/${selectedBook}/chapters/${selectedChapter}/sections/hadiths`,
+        `https://hadith-phi.vercel.app/api/books/${selectedBook}/chapters/${selectedChapter}/sections/hadiths`,
         {
           method: 'GET',
           headers: {
