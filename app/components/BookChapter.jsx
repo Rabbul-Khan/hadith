@@ -1,10 +1,9 @@
-import { useState } from 'react';
 import { PiMagnifyingGlassBold, PiHexagonFill } from 'react-icons/pi';
+import { inter } from '../fonts';
 
-const BookChapter = ({ books, chapters }) => {
-  const [showBooks, setShowBooks] = useState(true);
+const BookChapter = ({ books, chapters, showBooks, setShowBooks }) => {
   return (
-    <aside className="flex-col hidden col-start-1 col-end-4 gap-5 m-5 mr-0 bg-white rounded-lg xl:flex">
+    <aside className="flex flex-col gap-5 pb-5 m-5 mr-0 bg-white rounded-lg">
       <div className="flex border-b border-gray-300 cursor-pointer">
         <p
           className={`w-1/2 py-3 text-xl text-center  rounded-tl-lg  ${
@@ -29,7 +28,7 @@ const BookChapter = ({ books, chapters }) => {
 
           <input
             placeholder="Search For Filter"
-            className="w-full p-3 pl-12 bg-[#F2F4F6] rounded-lg  focus:outline-primary outline outline-[#DEE1E5]"
+            className={`w-full p-3 pl-12 bg-[#F2F4F6] rounded-lg focus:outline focus:outline-2 focus:outline-primary ${inter.className}`}
           />
         </div>
 
@@ -41,14 +40,14 @@ const BookChapter = ({ books, chapters }) => {
                 className="flex items-center gap-3 px-3 py-6 bg-[#EBFCF6] rounded-lg cursor-pointer"
               >
                 <div className="relative">
-                  <div className="absolute font-medium text-white top-2 left-5 ">
+                  <div className="absolute font-bold text-white top-2 left-5 ">
                     {item.abvr_code}
                   </div>
                   <PiHexagonFill size={50} className="text-primary" />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <p>{item.title}</p>
-                  <p className="text-sm text-slate-500   ">
+                  <p className="text-lg font-semibold">{item.title}</p>
+                  <p className="text-sm text-slate-500 ">
                     সর্বমোট হাদিস -{item.number_of_hadis}
                   </p>
                 </div>
@@ -63,13 +62,13 @@ const BookChapter = ({ books, chapters }) => {
                 className="flex items-center gap-3 px-3 py-6 bg-[#EBFCF6] rounded-lg cursor-pointer"
               >
                 <div className="relative">
-                  <div className="absolute font-medium text-white top-2 left-5 ">
+                  <div className="absolute font-bold text-white top-2 left-5 ">
                     {item.chapter_id}
                   </div>
                   <PiHexagonFill size={50} className="text-primary" />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <p>{item.title}</p>
+                  <p className="text-lg font-semibold">{item.title}</p>
                   <p className="text-sm text-slate-500">
                     হাদিসের রেঞ্জ: {item.hadis_range}
                   </p>
