@@ -12,11 +12,11 @@ import RightAsideResponsive from './components/RightAsideResponsive';
 
 export default function Home() {
   const [books, setBooks] = useState([]);
-  const [selectedBook, setSelectedBook] = useState('');
+  const [selectedBook, setSelectedBook] = useState({});
   const [chapters, setChapters] = useState([]);
-  const [selectedChapter, setSelectedChapter] = useState('');
+  const [selectedChapter, setSelectedChapter] = useState({});
   const [sections, setSections] = useState([]);
-  const [selectedSection, setSelectedSection] = useState('');
+  const [selectedSection, setSelectedSection] = useState({});
   const [hadiths, setHadiths] = useState([]);
 
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
@@ -29,89 +29,33 @@ export default function Home() {
   }, []);
 
   const fetchBooks = async () => {
-    try {
-      const response = await fetch('https://hadith-phi.vercel.app/api/books', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      const data = await response.json();
-      setBooks(data);
-
-      if (data.length > 0) {
-        setSelectedBook(data[0]);
-        fetchChapters(data[0]);
-      }
-    } catch (error) {
-      console.error('Error fetching books:', error);
-    }
+    const response = await fetch('/books.json');
+    const data = await response.json();
+    setBooks(data);
+    setSelectedBook(data[0]);
+    fetchChapters();
   };
 
-  const fetchChapters = async (selectedBook) => {
-    try {
-      const response = await fetch(
-        `https://hadith-phi.vercel.app/api/books/${selectedBook.book_name}/chapters`,
-        {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
-      const data = await response.json();
-      setChapters(data);
-
-      if (data.length > 0) {
-        setSelectedChapter(data[0].chapter_id);
-        fetchSections(data[0].book_name, data[0].chapter_id);
-      }
-    } catch (error) {
-      console.error('Error fetching chapters:', error);
-    }
+  const fetchChapters = async () => {
+    const response = await fetch('/chapter.json');
+    const data = await response.json();
+    setChapters(data);
+    setSelectedChapter(data[0]);
+    fetchSections();
   };
 
-  const fetchSections = async (selectedBook, selectedChapter) => {
-    try {
-      const response = await fetch(
-        `https://hadith-phi.vercel.app/api/books/${selectedBook}/chapters/${selectedChapter}/sections`,
-        {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
-      const data = await response.json();
-      setSections(data);
-
-      if (data.length > 0) {
-        setSelectedSection(data[0].section_id);
-
-        fetchHadiths(selectedBook, selectedChapter);
-      }
-    } catch (error) {
-      console.error('Error fetching chapters:', error);
-    }
+  const fetchSections = async () => {
+    const response = await fetch('/section.json');
+    const data = await response.json();
+    setSections(data);
+    setSelectedSection(data[0]);
+    fetchHadiths();
   };
 
-  const fetchHadiths = async (selectedBook, selectedChapter) => {
-    try {
-      const response = await fetch(
-        `https://hadith-phi.vercel.app/api/books/${selectedBook}/chapters/${selectedChapter}/sections/hadiths`,
-        {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
-      const data = await response.json();
-      setHadiths(data);
-    } catch (error) {
-      console.error('Error fetching chapters:', error);
-    }
+  const fetchHadiths = async () => {
+    const response = await fetch('/hadith.json');
+    const data = await response.json();
+    setHadiths(data);
   };
 
   return (

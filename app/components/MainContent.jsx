@@ -18,7 +18,6 @@ const MainContent = ({
   chapters,
   hadiths,
   selectedBook,
-  selectedChapter,
   selectedSection,
   setBookChapterIsOpen,
 }) => {
@@ -39,7 +38,7 @@ const MainContent = ({
           <LiaGreaterThanSolid size={12} />
           <p className="capitalize cursor-pointer">{selectedBook.book_name}</p>
           <LiaGreaterThanSolid size={12} />
-          <p className="cursor-pointer">{selectedSection}</p>
+          <p className="cursor-pointer">{selectedSection.section_id}</p>
         </div>
         <div className="flex items-center justify-between pt-5 cursor-pointer">
           <div className="flex items-center gap-3">
@@ -81,63 +80,53 @@ const MainContent = ({
                   <div className="">{section.preface}</div>
                 </div>
 
-                {hadiths
-                  .filter(
-                    (hadith) =>
-                      selectedBook.book_name === hadith.book_name &&
-                      selectedChapter === hadith.chapter_id &&
-                      section.id === hadith.section_id
-                  )
-                  .map((hadith) => (
-                    <div
-                      key={hadith.id}
-                      className="flex flex-col gap-3 p-5 bg-white rounded-lg"
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2 font-bold ">
-                          <PiOctagonBold className=" text-primary" size={30} />
-                          <span className="inline text-primary">
-                            {hadith.hadith_id}
-                          </span>
-                        </div>
-
-                        <span className="px-2 py-1 ml-2 text-white rounded-lg cursor-pointer bg-primary md:hidden">
-                          {hadith.grade}
+                {hadiths.map((hadith) => (
+                  <div
+                    key={hadith.hadith_id}
+                    className="flex flex-col gap-3 p-5 bg-white rounded-lg"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 font-bold ">
+                        <PiOctagonBold className=" text-primary" size={30} />
+                        <span className="inline text-primary">
+                          {hadith.hadith_id}
                         </span>
                       </div>
-                      <p lang="ar" dir="rtl" className="text-2xl leading-10">
-                        {hadith.ar}
+
+                      <span className="px-2 py-1 ml-2 text-white rounded-lg cursor-pointer bg-primary md:hidden">
+                        {hadith.grade}
+                      </span>
+                    </div>
+                    <p lang="ar" dir="rtl" className="text-2xl leading-10">
+                      {hadith.ar}
+                    </p>
+                    <p className="text-green-600">{hadith.narrator}</p>
+                    <p className="text-lg leading-8 tracking-wider">
+                      {hadith.bn}
+                    </p>
+                    <div className="flex justify-center md:justify-between">
+                      <p className="hidden md:block">
+                        হাদিসের মান :
+                        <span className="px-3 py-2 ml-2 text-white rounded-lg cursor-pointer bg-primary">
+                          {hadith.grade}
+                        </span>
                       </p>
-                      <p className="text-green-600">{hadith.narrator}</p>
-                      <p className="text-lg leading-8 tracking-wider">
-                        {hadith.bn}
-                      </p>
-                      <div className="flex justify-center md:justify-between">
-                        <p className="hidden md:block">
-                          হাদিসের মান :
-                          <span className="px-3 py-2 ml-2 text-white rounded-lg cursor-pointer bg-primary">
-                            {hadith.grade}
-                          </span>
-                        </p>
-                        <div className="flex gap-10 text-slate-500">
-                          <PiCopySimple size={25} className="cursor-pointer" />
-                          <PiBookmarkSimple
-                            size={25}
-                            className="cursor-pointer"
-                          />
-                          <PiShareNetwork
-                            size={25}
-                            className="cursor-pointer"
-                          />
-                          <BiErrorAlt size={25} className="cursor-pointer" />
-                          <RiDirectionLine
-                            size={25}
-                            className="cursor-pointer "
-                          />
-                        </div>
+                      <div className="flex gap-10 text-slate-500">
+                        <PiCopySimple size={25} className="cursor-pointer" />
+                        <PiBookmarkSimple
+                          size={25}
+                          className="cursor-pointer"
+                        />
+                        <PiShareNetwork size={25} className="cursor-pointer" />
+                        <BiErrorAlt size={25} className="cursor-pointer" />
+                        <RiDirectionLine
+                          size={25}
+                          className="cursor-pointer "
+                        />
                       </div>
                     </div>
-                  ))}
+                  </div>
+                ))}
               </div>
             ))}
           </div>
