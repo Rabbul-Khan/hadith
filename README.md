@@ -1,21 +1,19 @@
 # Hadiths API and UI Clone
 
-This project aims to create a clone of the UI of [ihadis.com](https://ihadis.com/bukhari/1) using Next.js, Tailwind CSS, and Node.js. The project also includes the development of API endpoints to fetch books, chapters, sections, and hadiths data.
+This project aims to create a clone of the UI of [ihadis.com](https://ihadis.com/bukhari/1) using Next.js, Tailwind CSS, and Node.js. The required information have been pulled from static data.
 
 ## Features
 
 - **UI Clone**: The frontend replicates the design and functionality of [ihadis.com](https://ihadis.com/bukhari/1).
 - **Responsive Design**: The UI is designed to be fully responsive, ensuring optimal viewing across various devices and screen sizes.
-- **Functional Sidebar**: The sidebar includes sections for Books and Chapters, with functional links and collapsible sections.
+- **Functional Sidebar**: The sidebar includes sections for Books and Chapters.
 - **Section Cards**: Each section is represented by cards with relevant information.
 - **Hadith Cards**: Hadiths are displayed in cards with details such as hadith number, text, and related references.
-- **API Integration**: Backend endpoints are implemented to provide data for the frontend UI.
 
 ## Technologies Used
 
-- **Node.js**: Used for developing backend API endpoints.
+- **Next.js**: Employed for building the frontend application.
 - **Tailwind CSS**: Utilized for styling the frontend UI with a focus on responsiveness and utility classes.
-- **Next.js**: Employed for building the frontend application with server-side rendering capabilities.
 
 ## Getting Started
 
@@ -50,26 +48,6 @@ This project aims to create a clone of the UI of [ihadis.com](https://ihadis.com
    ```bash
    npm run dev
    ```
-
-## API Endpoints
-
-### Books
-
-- **GET /api/books**: Get all books.
-- **GET /api/books/:book_name**: Get a specific book.
-
-### Chapters
-
-- **GET /api/books/:book_name/chapters**: Get all chapters of a specific book.
-- **GET /api/books/:book_name/chapters/:chapter_number**: Get a specific chapter from a specific book.
-
-### Sections
-
-- **GET /api/books/:book_name/chapters/:chapter_number/sections**: Get all sections of a specific chapter from a specific book.
-
-### Hadiths
-
-- **GET /api/books/:book_name/chapters/:chapter_number/sections/hadiths**: Get all hadiths of a specific section.
 
 ## Contributors
 

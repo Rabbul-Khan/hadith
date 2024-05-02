@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="bn">
+    <html>
       <body className={kalpurushFont.className}>{children}</body>
     </html>
   );

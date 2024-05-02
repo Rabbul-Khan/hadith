@@ -17,7 +17,6 @@
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.12",
     "eslint": "^8",
     "eslint-config-next": "14.2.2",
     "postcss": "^8",

@@ -16,7 +16,7 @@ const Header = ({ setSidebarIsOpen, sidebarIsOpen, bookChapterIsOpen }) => {
         `}
     >
       <div className="flex items-center gap-5 cursor-pointer">
-        <PiBooksFill className="p-1 lg:p-2 text-[2.8rem] border rounded-lg text-primary border-primary" />
+        <PiBooksFill className="p-1 lg:p-2 text-4xl sm:text-[2.8rem] border rounded-lg text-primary border-primary" />
         <div className="flex flex-col">
           <p className="hidden text-3xl sm:block lg:hidden text-primary">
             আল হাদিস
@@ -28,7 +28,7 @@ const Header = ({ setSidebarIsOpen, sidebarIsOpen, bookChapterIsOpen }) => {
         </div>
       </div>
       <div className="flex gap-5 lg:gap-20">
-        <PiMagnifyingGlassBold className="p-2 border text-[2.8rem] rounded-lg lg:hidden bg-slate-200 text-[#5C5C5C]" />
+        <PiMagnifyingGlassBold className="p-2 border text-4xl sm:text-[2.8rem] rounded-lg lg:hidden bg-slate-200 text-[#5C5C5C]" />
 
         <div className="relative hidden lg:block">
           <PiMagnifyingGlassBold className="absolute top-5 left-5 text-[#5C5C5C] " />
@@ -44,7 +44,7 @@ const Header = ({ setSidebarIsOpen, sidebarIsOpen, bookChapterIsOpen }) => {
             setSidebarIsOpen(true);
           }}
         >
-          <IoIosSettings className="p-2 text-[2.8rem] text-white rounded-lg bg-primary" />
+          <IoIosSettings className="p-2 text-4xl sm:text-[2.8rem] text-white rounded-lg bg-primary" />
         </button>
         <button className="items-center hidden gap-2 px-5 py-3 text-white rounded-lg 2xl:flex bg-primary">
           <span className="font-medium tracking-wider ">সাপোর্ট করুন</span>

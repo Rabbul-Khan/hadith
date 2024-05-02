@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { inter } from '../fonts';
 
 const Settings = () => {
   const [arabicFontSize, setArabicFontSize] = useState(29);
@@ -10,7 +11,11 @@ const Settings = () => {
         <label htmlFor="font" className="font-semibold tracking-wider">
           আরবি ফন্ট সিলেক্ট করুন
         </label>
-        <select name="font" id="font" className="p-3 rounded-lg cursor-pointer">
+        <select
+          name="font"
+          id="font"
+          className={`p-3 rounded-lg cursor-pointer ${inter.className}`}
+        >
           <option value="KFGQ">KFGQ</option>
           <option value="Me Quran">Me Quran</option>
           <option value="Al Mushaf">Al Mushaf</option>
